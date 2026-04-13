@@ -18,7 +18,7 @@ int main() {
 }
 
 int resultadoTabuleiro(char tab[3][3], char jogador1) {
-    char jogador2, vencedor = '.';
+    char vencedor = '.';
     int temEmpate = 0, temEspaco = 0, temVencedor = 0;
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
@@ -61,17 +61,13 @@ int resultadoTabuleiro(char tab[3][3], char jogador1) {
         vencedor = tab[0][2];
         temVencedor = 1;
     }
-    if (temVencedor) {
-        if (jogador1 == vencedor) return 1;
-        else return -1;
-    }
+    if (temVencedor) return (jogador1 == vencedor) ? 1 : -1;
     if (!temEspaco) return 0;
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
             if (tab[i][j] == '.') {
                 tab[i][j] = jogador1;
-                if (jogador1 == 'X') jogador2 = 'O';
-                else if (jogador1 == 'O') jogador2 = 'X';
+                char jogador2 = (jogador1 == 'X') ? 'O' : 'X';
                 int resultado = resultadoTabuleiro(tab, jogador2);
                 tab[i][j] = '.';
                 if (resultado == -1) return 1;
@@ -79,6 +75,5 @@ int resultadoTabuleiro(char tab[3][3], char jogador1) {
             }
         }
     }
-    if (temEmpate) return 0;
-    else return -1;
+    return (temEmpate) ? 0 : -1;
 }
