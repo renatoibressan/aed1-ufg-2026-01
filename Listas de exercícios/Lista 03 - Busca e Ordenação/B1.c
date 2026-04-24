@@ -2,34 +2,33 @@
 #include <stdlib.h>
 #define N 200000
 // Busca Binaria (com Merge Sort)
-void mesclaVetor(int *v, int *aux, int inicial, int meio, int final);
+void mesclaVetor(int *v, int aux[], int inicial, int meio, int final);
 
-void ordenaVetor(int *v, int *aux, int inicial, int final);
+void ordenaVetor(int *v, int aux[], int inicial, int final);
 
 int buscaBinaria(int *v, int n, int x);
 
 int main() {
-    int n, q, i, x, temp;
-    int *v = NULL, *aux = NULL;
-    if (scanf("%d %d", &n, &q) != 2) return 1;
+    int n, q, i, x, res;
+    int *v = NULL, aux[N];
+    scanf("%d %d", &n, &q);
     if (n < 1 || n > N || q < 1 || q > N) return 1;
     v = (int *)malloc(n*sizeof(int));
-    aux = (int *)malloc(n*sizeof(int));
+    if (v == NULL) return 1;
     for (i = 0; i < n; i++) {
-        if (scanf("%d", &v[i]) != 1) return 1;
+        scanf("%d", &v[i]);
     }
     ordenaVetor(v, aux, 0, n - 1);
     for (i = 0; i < q; i++) {
-        if (scanf("%d", &x) != 1) return 1;
-        temp = buscaBinaria(v, n, x);
-        printf("%d\n", temp);
+        scanf("%d", &x);
+        res = buscaBinaria(v, n, x);
+        printf("%d\n", res);
     }
     free(v);
-    free(aux);
     return 0;
 }
 
-void mesclaVetor(int *v, int *aux, int inicial, int meio, int final) {
+void mesclaVetor(int *v, int aux[], int inicial, int meio, int final) {
     int k, j;
     for (k = inicial; k <= final; k++) {
         aux[k] = v[k];
@@ -43,7 +42,7 @@ void mesclaVetor(int *v, int *aux, int inicial, int meio, int final) {
     }
 }
 
-void ordenaVetor(int *v, int *aux, int inicial, int final) {
+void ordenaVetor(int *v, int aux[], int inicial, int final) {
     int meio;
     if (final > inicial) {
         meio = (inicial + final) / 2;

@@ -2,16 +2,16 @@
 #include <stdlib.h>
 #define N 200000
 // Ordenação 1 (Merge Sort)
-void mesclaVetor(int *v, int *aux, int inicial, int meio, int final);
+void mesclaVetor(int *v, int aux[], int inicial, int meio, int final);
 
-void ordenaVetor(int *v, int *aux, int inicial, int final);
+void ordenaVetor(int *v, int aux[], int inicial, int final);
 
 int main() {
     int n, i;
-    int *v = NULL, *aux = NULL;
+    int *v = NULL, aux[N];
     scanf("%d", &n);
     v = (int *)malloc(n*sizeof(int));
-    aux = (int *)malloc(n*sizeof(int));
+    if (v == NULL) return 1;
     for (i = 0; i < n; i++) {
         scanf("%d", &v[i]);
     }
@@ -25,11 +25,10 @@ int main() {
     }
     printf("\n");
     free(v);
-    free(aux);
     return 0;
 }
 
-void mesclaVetor(int *v, int *aux, int inicial, int meio, int final) {
+void mesclaVetor(int *v, int aux[], int inicial, int meio, int final) {
     int k, j;
     for (k = inicial; k <= final; k++) {
         aux[k] = v[k];
@@ -43,7 +42,7 @@ void mesclaVetor(int *v, int *aux, int inicial, int meio, int final) {
     }
 }
 
-void ordenaVetor(int *v, int *aux, int inicial, int final) {
+void ordenaVetor(int *v, int aux[], int inicial, int final) {
     int meio;
     if (final > inicial) {
         meio = (inicial + final) / 2;
