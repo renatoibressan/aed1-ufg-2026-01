@@ -1,0 +1,17 @@
+# Binários e Executáveis
+main
+*.exe
+*.out
+*.o
+*.obj
+*.so
+*.a
+*.dll
+
+# Diretórios de build
+build/
+bin/
+
+# Debug
+*.dSYM/
+*.gdb
