@@ -31,11 +31,12 @@ int dequeue(Fila *f, int *val) {
     return 1;
 }
 
-void imprime_fila(const char *mensagem, No *head) {
+void imprime_fila(const char *mensagem, Fila *f) {
+    No *atual = f->inicio;
     printf("%s\n", mensagem);
-    while (head) {
-        printf("[%d] -> ", head->dado);
-        head = head->prox;
+    while (atual) {
+        printf("[%d] -> ", atual->dado);
+        atual = atual->prox;
     }
     printf("NULL\n");
 }

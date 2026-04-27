@@ -30,7 +30,7 @@ int main() {
             default: break;
         }
     }
-    imprime_fila("Fila final:", (&f)->inicio);
+    imprime_fila("Fila final:", &f);
     libera_fila(&f);
     return 0;
 }

@@ -12,5 +12,5 @@ typedef struct {
 void inicializa_fila(Fila *f);
 int enqueue(Fila *f, int val);
 int dequeue(Fila *f, int *val);
-void imprime_fila(const char *mensagem, No *head);
+void imprime_fila(const char *mensagem, Fila *f);
 void libera_fila(Fila *f);
