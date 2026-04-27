@@ -19,12 +19,12 @@ void imprime_lista(const char *mensagem, No *head) {
 }
 
 void libera_lista(No **head) {
-    No *aux = *head;
+    No *atual = *head;
     No *prox;
-    while (aux) {
-        prox = aux->prox;
-        free(aux);
-        aux = prox;
+    while (atual) {
+        prox = atual->prox;
+        free(atual);
+        atual = prox;
     }
     *head = NULL;
 }

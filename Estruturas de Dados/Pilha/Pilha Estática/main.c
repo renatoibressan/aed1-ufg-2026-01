@@ -4,10 +4,10 @@
 
 int main() {
     Pilha p;
-    int x, op, checkup = 1;
+    int x, op = -1, checkup = 1;
     inicializa_pilha(&p);
     while (op != 0) {
-        printf("1. Adicionar elemento a pilha\n2. Remover o elemento do topo da pilha\n3. Consultar topo atual\n0. Encerrar a operacao\nInsira a opcao desejada: ");
+        printf("1. Adicionar ao topo da pilha\n2. Remover do topo da pilha\n3. Consultar topo atual\n0. Encerrar a operacao\nInsira a opcao desejada: ");
         scanf("%d", &op);
         while (op < 0 || op > 3) {
             printf("Opcao invalida!\nInsira a opcao desejada: ");

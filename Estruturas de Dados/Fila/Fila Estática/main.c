@@ -4,7 +4,7 @@
 
 int main() {
     Fila f;
-    int x, op, checkup = 1;
+    int x, op = -1, checkup = 1;
     inicializa_fila(&f);
     while (op != 0) {
         printf("1. Adicionar ao final da fila (enfileirar/enqueue)\n2. Remover do inicio da fila (desenfileirar/dequeue)\n0. Encerrar a operacao\nInsira a opcao desejada: ");

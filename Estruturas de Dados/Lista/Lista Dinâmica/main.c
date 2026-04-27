@@ -3,7 +3,7 @@
 #include "lista_dinamica.h"
 
 int main() {
-    No *lista = NULL;
+    No *l = NULL;
     int x, i = 0;
     while (1) {
         i++;
@@ -12,9 +12,9 @@ int main() {
             printf("Valor invalido!\n(Operacao encerrada)\n");
             break;
         }
-        lista = insere_inicio(lista, x);
+        l = insere_inicio(l, x);
     }
-    imprime_lista("Lista final:", lista);
-    libera_lista(&lista);
+    imprime_lista("Lista final:", l);
+    libera_lista(&l);
     return 0;
 }
