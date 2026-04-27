@@ -19,7 +19,7 @@ int main() {
                     printf("Erro de alocacao!\n");
                     break;
                 }
-                printf("Insira um valor a ser acrescentado a pilha: ");
+                printf("Insira um valor a ser acrescentado a fila: ");
                 scanf("%d", &x);
                 checkup = enqueue(&f, x);
                 if (checkup) printf("Elemento %d acrescentado com sucesso!\n", x);
