@@ -16,7 +16,7 @@ int main() {
         switch (op) {
             case 1:
                 if (!checkup) {
-                    printf("Pilha cheia!\n");
+                    printf("Fila cheia!\n");
                     break;
                 }
                 printf("Insira um valor a ser acrescentado a fila: ");
