@@ -51,7 +51,7 @@ void ordenaVetor(int *v, int aux[], int inicial, int final) {
 }
 
 long long pedacos(int *v, int n, long long p) {
-    long long soma, resultado  = 0;
+    long long soma, resultado = 0;
     long long esq = 1, dir = v[n - 1];
     while (esq <= dir) {
         soma = 0;
