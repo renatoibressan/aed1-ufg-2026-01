@@ -14,27 +14,17 @@ int main() {
     char op;
     scanf("%d", &k);
     s = (int *)malloc(k*sizeof(int));
-    if (s == NULL) return 1;
     for (i = 0; i < k; i++) {
         scanf("%d", &s[i]);
         total *= s[i];
     }
     dimensao = s[k - 1];
     arr = (int *)malloc(total*sizeof(int));
-    if (arr == NULL) {
-        free(s);
-        return 1;
-    }
     for (i = 0; i < total; i++) {
         scanf("%d", &arr[i]);
     }
     scanf("%d", &q);
     ids = (int *)malloc(k*sizeof(int));
-    if (ids == NULL) {
-        free(s);
-        free(arr);
-        return 1;
-    }
     for (i = 0; i < q; i++) {
         scanf(" %c", &op);
         for (j = 0; j < k; j++) {

@@ -25,7 +25,6 @@ int main() {
     char op;
     inicializarVetor(M, LIMITE);
     scanf("%d", &q);
-    if (q < 1 || q > LIMITE) return 1;
     for (i = 0; i < q; i++) {
         scanf(" %c", &op);
         switch (op) {

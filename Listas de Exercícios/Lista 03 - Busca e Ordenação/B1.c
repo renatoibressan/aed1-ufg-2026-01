@@ -12,9 +12,7 @@ int main() {
     int n, q, i, x, res;
     int *v = NULL, aux[N];
     scanf("%d %d", &n, &q);
-    if (n < 1 || n > N || q < 1 || q > N) return 1;
     v = (int *)malloc(n*sizeof(int));
-    if (!v) return 1;
     for (i = 0; i < n; i++) {
         scanf("%d", &v[i]);
     }

@@ -10,7 +10,6 @@ void imprimirMatriz(int m[N][N], int n);
 int main() {
     int n, m[N][N];
     scanf("%d", &n);
-    if (n % 2 == 0 || n < 1 || n > N) return 0;
     inicializarMatriz(m, n);
     gerarQuadradoMagico(m, n);
     imprimirMatriz(m, n);

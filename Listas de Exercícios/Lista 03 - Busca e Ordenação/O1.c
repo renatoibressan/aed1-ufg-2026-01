@@ -11,7 +11,6 @@ int main() {
     int *v = NULL, aux[N];
     scanf("%d", &n);
     v = (int *)malloc(n*sizeof(int));
-    if (!v) return 1;
     for (i = 0; i < n; i++) {
         scanf("%d", &v[i]);
     }

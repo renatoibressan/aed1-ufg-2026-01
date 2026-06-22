@@ -13,9 +13,7 @@ long long somaDistancias(int *v, int n);
 int main() {
     int n, *v = NULL, aux[N];
     scanf("%d", &n);
-    if (n < 1 || n > N) return 1;
     v = (int *)malloc(n*sizeof(int));
-    if (!v) return 1;
     for (int i = 0; i < n; i++) {
         scanf("%d", &v[i]);
     }
